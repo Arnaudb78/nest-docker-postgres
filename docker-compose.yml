@@ -10,7 +10,7 @@ services:
       - POSTGRES_DB=mydb
     container_name: postgres
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - db:/var/lib/postgresql/data
     ports:
       - '5432:5432'
 
@@ -36,3 +36,6 @@ services:
       - '8080:8080'
     depends_on:
       - db
+
+volumes:
+    db:
